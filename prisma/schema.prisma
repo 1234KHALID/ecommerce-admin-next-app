@@ -80,8 +80,8 @@ model Color {
 
 model Product {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  storedId   String   @db.ObjectId
-  store      Store    @relation("StoreToProduct", fields: [storedId], references: [id])
+  storeId    String   @db.ObjectId
+  store      Store    @relation("StoreToProduct", fields: [storeId], references: [id])
   categoryId String   @db.ObjectId
   category   Category @relation("CategoryToProduct", fields: [categoryId], references: [id])
   name       String
@@ -96,7 +96,7 @@ model Product {
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
-  @@index([storedId])
+  @@index([storeId])
   @@index([categoryId])
   @@index([sizeId])
   @@index([colorId])
