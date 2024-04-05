@@ -8,7 +8,6 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     const { name } = body;
-    console.log(userId, "userId Data");
 
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
