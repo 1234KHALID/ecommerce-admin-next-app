@@ -1,5 +1,4 @@
 import prismadb from "@/lib/prismadb";
-
 interface GraphData {
   name: string;
   total: number;
@@ -19,8 +18,6 @@ export const getGraphRevenue = async (storeId: string) => {
       },
     },
   });
-
-  console.log(paidOrders, "order");
 
   const monthlyRevenue: { [key: number]: number } = {};
 
